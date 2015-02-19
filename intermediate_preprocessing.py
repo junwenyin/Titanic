@@ -7,7 +7,10 @@ Created on Wed Feb 11 15:14:33 2015
 
 import re
 
-arff = open("train.arff",'w')
+
+
+
+arff = open("train_a.arff",'w')
 csv = open("train.csv",'r')
 
 arff.write("@RELATION titanic\n\n")
@@ -19,7 +22,10 @@ arff.write("@ATTRIBUTE Sex NUMERIC\n")
 arff.write("@ATTRIBUTE Age NUMERIC\n")
 arff.write("@ATTRIBUTE SibSp NUMERIC\n")
 arff.write("@ATTRIBUTE Parch NUMERIC\n")
-arff.write("@ATTRIBUTE Fare NUMERIC\n\n")
+arff.write("@ATTRIBUTE Fare NUMERIC\n")
+arff.write("@ATTRIBUTE familysize NUMERIC\n")
+arff.write("@ATTRIBUTE fareperperson NUMERIC\n\n")
+
 
 arff.write("@DATA\n")
 
@@ -36,7 +42,14 @@ for line in csv:
         newline += match.group(6) + ","
       
     newline += match.group(7) + "," + match.group(8) + "," + match.group(10)
+    
+    #add familysize
+    familysize = int(match.group(7)) + int(match.group(8))
 
+    fareperperson = float(match.group(10)) / (familysize + 1) 
+    newline += "," + str(familysize) + "," + str(fareperperson)
+    
+    
     newline += "\n"
     arff.write(newline)
     

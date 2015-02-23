@@ -10,8 +10,8 @@ import re
 
 
 
-arff = open("train_a.arff",'w')
-csv = open("train.csv",'r')
+arff = open("test_a.arff",'w')
+csv = open("test.csv",'r')
 
 arff.write("@RELATION titanic\n\n")
 
@@ -30,28 +30,37 @@ arff.write("@ATTRIBUTE fareperperson NUMERIC\n\n")
 arff.write("@DATA\n")
 
 for line in csv:
-    match = re.match(r'"(.*),(.*),(.*),"(.*)",(.*),(.*),(.*),(.*),(.*),(.*),(.*),(.*)"', line) 
-    newline =  match.group(2) + "," + match.group(3) + ","   
-    if match.group(5) == "male":
+    match = re.match(r'"(.*),(.*),"(.*)",(.*),(.*),(.*),(.*),(.*),(.*),(.*),(.*)"', line) 
+    newline =  '?,' + match.group(2) + "," 
+    if match.group(4) == "male":
         newline += "0,"
     else:
         newline += "1,"
-    if match.group(6) == "":
+    if match.group(5) == "":
         newline += "?,"
     else:
-        newline += match.group(6) + ","
-      
-    newline += match.group(7) + "," + match.group(8) + "," + match.group(10) + ","
+        newline += match.group(5) + ","
+        
+        
+    newline += match.group(6) + "," + match.group(7) + ","
     
-    if match.group(12) == "":
+    
+    if match.group(9) == "":
         newline += "?"
     else:
-        newline += match.group(12)
-        
-    #add familysize
-    familysize = int(match.group(7)) + int(match.group(8))
+        newline += match.group(9)
 
-    fareperperson = float(match.group(10)) / (familysize + 1) 
+    if match.group(11) == "":
+        newline += ",?"
+    else:
+        newline += "," + match.group(11)
+    
+    #add familysize
+    familysize = int(match.group(6)) + int(match.group(7))
+    if match.group(9) == "":
+        fareperperson = "?"
+    else:
+        fareperperson = float(match.group(9)) / (familysize + 1) 
     newline += "," + str(familysize) + "," + str(fareperperson)
     
     

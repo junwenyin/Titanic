@@ -7,8 +7,8 @@ Created on Wed Feb 11 15:14:33 2015
 
 import re
 
-arff = open("pandasnewfeatures.arff",'r')
-csv = open("pandasnewfeatures.csv",'w')
+arff = open("pandasdeck.arff",'r')
+csv = open("pandasdeck.csv",'w')
 
 csv.write("PassengerId,Survived\n")
 i = 892

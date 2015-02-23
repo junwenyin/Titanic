@@ -10,12 +10,18 @@ import pandas as pd
 import re
 
 
-def substrings_in_string(big_string, title_list):
+def substrings_in_string_title(big_string, title_list):
     decomposed = re.sub("[^\w]", " ",  big_string).split()
     for title in title_list:
         for word in decomposed:
             if word==title: 
                 return title
+    return np.nan
+    
+def substrings_in_string_deck(big_string, deck_list):
+    for deck in deck_list:
+        if str(big_string)[0] == deck: 
+            return deck
     return np.nan
     
 def replace_titles(x):
@@ -36,15 +42,19 @@ def replace_titles(x):
         
 
 data = pd.read_csv("test.csv")
-data = data.drop(["PassengerId","Ticket","Cabin"], axis=1)
+data = data.drop(["PassengerId","Ticket"], axis=1)
 
+#Turning cabin number into Deck
+cabin_list = ['A', 'B', 'C', 'D', 'E', 'F', 'T', 'G', 'Unknown']
+data['Deck']=data['Cabin'].map(lambda x: substrings_in_string_deck(x, cabin_list))
+
+#Manage titles
 title_list=['Mrs', 'Mr', 'Master', 'Miss', 'Major', 'Rev',
                     'Dr', 'Ms', 'Mlle','Col', 'Capt', 'Mme', 'Countess',
                     'Don', 'Jonkheer']
-#create title feature
-data['Title']=data['Name'].map(lambda x: substrings_in_string(x, title_list))
+data['Title']=data['Name'].map(lambda x: substrings_in_string_title(x, title_list))
 
-#replace missing ages with the average age of people with the same title
+#Replace missing ages with the average age of people with the same title
 average_age = data.groupby("Title").aggregate(np.mean)["Age"]
 data["Age"] = data.apply(lambda row: average_age[row["Title"]]
                                             if pd.isnull(row["Age"])
@@ -56,7 +66,7 @@ data["Age"] = data.apply(lambda row: average_age[row["Title"]]
 data['Title']=data.apply(replace_titles, axis=1)
 
 #remove the name feature
-data = data.drop(["Name"], axis = 1)
+data = data.drop(["Name", "Cabin"], axis = 1)
 
 #add a missing values column for weka
 data.insert(0, "Survived", "?")

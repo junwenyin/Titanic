@@ -58,10 +58,19 @@ data['Title']=data.apply(replace_titles, axis=1)
 #remove the name feature
 data = data.drop(["Name"], axis = 1)
 
-#drop the lines (there are 2) where embarked is missing
-data = data.dropna(subset=["Embarked"])
-
 #add a missing values column for weka
-data["Survived"] = "?"
+data.insert(0, "Survived", "?")
+
+#add familysize feature (= SibSp + Parch)
+data["Familysize"] = data["SibSp"] + data["Parch"]
+
+#add ageclass (= age * Pclass)
+data['Age*Class']=data['Age'] * data['Pclass']
+
+#add fareperperson (= fare / familysize)
+data['FarePerPerson']=data['Fare']/(data['Familysize']+1)
+
+#change missing values to "?"
+data = data.fillna("?")
 
 data.to_csv("test_cleaned.csv",index=False)

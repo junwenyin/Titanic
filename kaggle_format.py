@@ -7,8 +7,8 @@ Created on Wed Feb 11 15:14:33 2015
 
 import re
 
-arff = open("randomforestnewfeatures.arff",'r')
-csv = open("predictedrandomforestnewfeatures.csv",'w')
+arff = open("pandasnewfeatures.arff",'r')
+csv = open("pandasnewfeatures.csv",'w')
 
 csv.write("PassengerId,Survived\n")
 i = 892

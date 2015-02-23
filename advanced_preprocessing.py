@@ -58,7 +58,16 @@ data['Title']=data.apply(replace_titles, axis=1)
 #remove the name feature
 data = data.drop(["Name"], axis = 1)
 
-#drop the lines (there are 2) where embarked is missing
-data = data.dropna(subset=["Embarked"])
+#add familysize feature (= SibSp + Parch)
+data["Familysize"] = data["SibSp"] + data["Parch"]
+
+#add ageclass (= age * Pclass)
+data['Age*Class']=data['Age'] * data['Pclass']
+
+#add fareperperson (= fare / familysize)
+data['FarePerPerson']=data['Fare']/(data['Familysize']+1)
+
+#There are two missing values for "Embarked"
+data = data.fillna("?")
 
 data.to_csv("train_cleaned.csv",index=False)

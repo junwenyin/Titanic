@@ -1,4 +1,19 @@
-Survived,Pclass,Sex,Age,SibSp,Parch,Fare,Embarked,Title,Familysize,Age*Class,FarePerPerson
+@relation titanic
+
+@attribute Survived {0,1}
+@attribute Pclass {1,2,3}
+@attribute Sex {male,female}
+@attribute Age numeric
+@attribute SibSp numeric
+@attribute Parch numeric
+@attribute Fare numeric
+@attribute Embarked {S,C,Q}
+@attribute Title {Mr,Mrs,Miss,Master}
+@attribute Familysize numeric
+@attribute Age*Class numeric
+@attribute FarePerPerson numeric
+
+@data
 ?,3,male,34.5,0,0,7.8292,Q,Mr,0,103.5,7.8292
 ?,3,female,47.0,1,0,7.0,S,Mrs,1,141.0,3.5
 ?,2,male,62.0,0,0,9.6875,Q,Mr,0,124.0,9.6875

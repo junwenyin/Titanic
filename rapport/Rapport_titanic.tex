@@ -9,7 +9,7 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{graphicx}
-
+\usepackage{hyperref}
 
 
 \author{Nicolas Drizard, Eloi Zablocki}
@@ -24,26 +24,59 @@
 
 \newpage
 \part*{Introduction}
+In the report we present our approach to the \textit{Kaggle} competition\footnote{More infos to be found at \url{https://www.kaggle.com/c/titanic-gettingStarted/}}. The goal is to predict the passengers that survived at the shipwreck of Titanic, given some caracteristics such as the genre, the age, etc.\\
+First, we will explain the preprocessing task that has be made in order to clean, extract and create the features. Then we will present the algorithms tries and used for the classification task.
 
-
-\part{part 1}
+\part{\textit{Data pre-processing} and \textit{Feature Engineering}}
 \setcounter{section}{0}
 
 
-\section{section 1}
+\section{Data pre-processing}
+
+use of pandas (handle floats and strings)
+tres pratique
+
+\section{Feature Engineering}
+
+\paragraph{Creation of features}
+extraction du title, et regroupement en 4 classes de title. (master c'est pour les enfants)\\
+extraction du deck,\\
+creation de familysize,\\
+creation de fareperperson,\\
+creation de age*Pclass,\\
 
 
-\paragraph{paragraph 1}
+\paragraph{Filling missing values}
+remplacer les missing values de l'age par l'age moyen des mecs qui ont le même title.
 
-\paragraph{paragraph 2}
+\paragraph{Dimensionality reduction}
+(on en a pas fait, donc a voir si on en fait ou pas)
 
-
-
-\section{section 2}
-
-
-\part{part 2}
+\part{Classification algorithm}
 \setcounter{section}{0}
+
+\section{Data visualization}
+insister sur le fait qu'on a fait beaucoup de data visualization, sur weka ou avec pandas (quite a écrire 3 lignes de code en plus)
+
+\section{Seeking the best classification algorithm}
+
+\paragraph{weka}
+explication rapide du logiciel, ce qu'il peut faire
+
+\paragraph{finding a good algo}
+test de pleins d'algo, on a choisis "bagging"
+
+\paragraph{Explication de bagging}
+il accepte les missing values,
+il accepte les attributs a valeurs nominales
+ce qu'il fait,
+son implémentation
+
+
+\part{What has not worked}
+\setcounter{section}{0}
+
+ne pas hésiter a dire qu'on a essayer plein de trucs qui n'ont pas forcément fonctionné. bien expliquer que trouver une bonne solution consister a approcher pas tatonnement.
 
 
 \part*{Conclusion}

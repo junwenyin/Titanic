@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.2.13)  25 FEB 2015 11:45
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.2.13)  26 FEB 2015 14:03
 entering extended mode
 **Rapport_titanic.tex
 (C:\Users\Eloi\Documents\GitHub\Titanic\rapport\Rapport_titanic.tex
@@ -303,135 +303,449 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip49
 )
+("C:\Program Files\MiKTeX 2.9\tex\latex\polytechnique\polytechnique.sty"
+Package: polytechnique 2015/02/03 v1.2.1, standard scientific documents layout 
+for Ecole polytechnique.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(C:\Users\Eloi\AppData\Roaming\MiKTeX\2.9\tex\latex\titlesec\titlesec.sty
+Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
+\ttl@box=\box28
+\beforetitleunit=\skip50
+\aftertitleunit=\skip51
+\ttl@plus=\dimen121
+\ttl@minus=\dimen122
+\ttl@toksa=\toks28
+\titlewidth=\dimen123
+\titlewidthlast=\dimen124
+\titlewidthfirst=\dimen125
+
+(C:\Users\Eloi\AppData\Roaming\MiKTeX\2.9\tex\latex\titlesec\ttlps.def
+File: ttlps.def 2011/12/15
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+Package: geometry 2010/09/12 v5.6 Page Geometry
+\Gm@cnth=\count113
+\Gm@cntv=\count114
+\c@Gm@tempcnt=\count115
+\Gm@bindingoffset=\dimen126
+\Gm@wd@mp=\dimen127
+\Gm@odd@mp=\dimen128
+\Gm@even@mp=\dimen129
+\Gm@layoutwidth=\dimen130
+\Gm@layoutheight=\dimen131
+\Gm@layouthoffset=\dimen132
+\Gm@layoutvoffset=\dimen133
+\Gm@dimlist=\toks29
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\calc.sty"
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count116
+\calc@Bcount=\count117
+\calc@Adimen=\dimen134
+\calc@Bdimen=\dimen135
+\calc@Askip=\skip52
+\calc@Bskip=\skip53
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count118
+\calc@Cskip=\skip54
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\color.sty"
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\lmodern.sty"
+Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+)
+\margehaut=\skip55
+\hauteurentete=\skip56
+\separationentete=\skip57
+\margecote=\skip58
+\margebas=\skip59
+\separationpied=\skip60
+\hauteurlogohori=\skip61
+\separationtitre=\skip62
+\epaisseurtrait=\skip63
+\separationlignestitre=\skip64
+\separationtitrecorps=\skip65
+\hauteurlogopage=\skip66
+\separationentetelogo=\skip67
+\largeurlogovert=\skip68
+\hauteurlogovert=\skip69
+\largeurlogohori=\skip70
+\distancetitrelogo=\skip71
+\separationlogotrait=\skip72
+\largeurminipage=\skip73
+\largeurtitreentete=\skip74
+\decalageverticalentete=\skip75
+\distancetitrecorps=\skip76
+)
+(C:\Users\Eloi\AppData\Roaming\MiKTeX\2.9\tex\latex\titlesec\block.tss
+File: block.tss 2011/12/15
+)
 
 LaTeX Warning: Unused global option(s):
     [portrait].
 
 (C:\Users\Eloi\Documents\GitHub\Titanic\rapport\Rapport_titanic.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Info: Redefining \degres on input line 20.
-LaTeX Info: Redefining \dots on input line 20.
-LaTeX Info: Redefining \up on input line 20.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 21.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmr.fd"
+File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Info: Redefining \degres on input line 21.
+LaTeX Info: Redefining \dots on input line 21.
+LaTeX Info: Redefining \up on input line 21.
 
 (C:\Users\Eloi\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count113
-\scratchdimen=\dimen121
-\scratchbox=\box28
-\nofMPsegments=\count114
-\nofMParguments=\count115
-\everyMPshowfont=\toks28
-\MPscratchCnt=\count116
-\MPscratchDim=\dimen122
-\MPnumerator=\count117
-\makeMPintoPDFobject=\count118
-\everyMPtoPDFconversion=\toks29
+\scratchcounter=\count119
+\scratchdimen=\dimen136
+\scratchbox=\box29
+\nofMPsegments=\count120
+\nofMParguments=\count121
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count122
+\MPscratchDim=\dimen137
+\MPnumerator=\count123
+\makeMPintoPDFobject=\count124
+\everyMPtoPDFconversion=\toks31
 )
-\AtBeginShipoutBox=\box29
-Package hyperref Info: Link coloring OFF on input line 20.
+\AtBeginShipoutBox=\box30
+Package hyperref Info: Link coloring OFF on input line 21.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count119
+\c@section@level=\count125
 )
-LaTeX Info: Redefining \ref on input line 20.
-LaTeX Info: Redefining \pageref on input line 20.
-LaTeX Info: Redefining \nameref on input line 20.
+LaTeX Info: Redefining \ref on input line 21.
+LaTeX Info: Redefining \pageref on input line 21.
+LaTeX Info: Redefining \nameref on input line 21.
 
 (C:\Users\Eloi\Documents\GitHub\Titanic\rapport\Rapport_titanic.out)
 (C:\Users\Eloi\Documents\GitHub\Titanic\rapport\Rapport_titanic.out)
 \@outlinefile=\write3
-LaTeX Font Info:    Try loading font information for U+msa on input line 23.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(56.9055pt, 483.69687pt, 56.9055pt)
+* v-part:(T,H,B)=(113.81102pt, 631.65118pt, 99.58464pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=483.69687pt
+* \textheight=631.65118pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-69.4247pt
+* \headheight=76.82243pt
+* \headsep=34.1433pt
+* \topskip=11.0pt
+* \footskip=49.79231pt
+* \marginparwidth=50.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+<logovert.pdf, id=56, 196.53926pt x 267.24042pt>
+File: logovert.pdf Graphic file (type pdf)
+ <use logovert.pdf>
+Package pdftex.def Info: logovert.pdf used on input line 23.
+(pdftex.def)             Requested size: 85.35565pt x 116.06107pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
+
+ []
+
+LaTeX Info: Redefining \\ on input line 23.
+[1
+
+{C:/Users/Eloi/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Program F
+iles/MiKTeX 2.9/tex/latex/polytechnique/logovert.pdf>]
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 28.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 28.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omllmm.fd"
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 28.
+
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omslmsy.fd"
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 28.
+
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omxlmex.fd"
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 28.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 28.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 28.
+LaTeX Font Info:    Try loading font information for U+msa on input line 28.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 23.
+LaTeX Font Info:    Try loading font information for U+msb on input line 28.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
-
-{C:/Users/Eloi/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 27.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
-File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-Underfull \hbox (badness 10000) in paragraph at lines 42--47
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 28.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 28.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 28.
+LaTeX Font Info:    Try loading font information for T1+lmss on input line 35.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmss.fd"
+File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+<filetlongrouge.pdf, id=78, 124.21106pt x 2.16629pt>
+File: filetlongrouge.pdf Graphic file (type pdf)
+ <use filetlongrouge.pdf>
+Package pdftex.def Info: filetlongrouge.pdf used on input line 35.
+(pdftex.def)             Requested size: 124.21074pt x 2.16628pt.
+
+<sexsur.png, id=82, 253.54726pt x 187.902pt>
+File: sexsur.png Graphic file (type png)
+ <use sexsur.png>
+Package pdftex.def Info: sexsur.png used on input line 45.
+(pdftex.def)             Requested size: 152.12952pt x 112.74207pt.
+
+<agesur.png, id=84, 255.95625pt x 187.29974pt>
+File: agesur.png Graphic file (type png)
+ <use agesur.png>
+Package pdftex.def Info: agesur.png used on input line 46.
+(pdftex.def)             Requested size: 153.57492pt x 112.38069pt.
+
+<titlesur.png, id=85, 255.354pt x 184.2885pt>
+File: titlesur.png Graphic file (type png)
+ <use titlesur.png>
+Package pdftex.def Info: titlesur.png used on input line 47.
+(pdftex.def)             Requested size: 153.21358pt x 110.57394pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--50
 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 59.
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 59.
- [2]pdfTeX warning (ext4): destination with the same identifier (name{section.2
+File: filetlongrouge.pdf Graphic file (type pdf)
+<use filetlongrouge.pdf>
+Package pdftex.def Info: filetlongrouge.pdf used on input line 64.
+(pdftex.def)             Requested size: 124.21074pt x 2.16628pt.
+
+<filetcourtbleuclair.pdf, id=86, 28.40492pt x 2.16678pt>
+File: filetcourtbleuclair.pdf Graphic file (type pdf)
+
+<use filetcourtbleuclair.pdf>
+Package pdftex.def Info: filetcourtbleuclair.pdf used on input line 66.
+(pdftex.def)             Requested size: 28.40483pt x 2.16676pt.
+ <logohori.pdf, id=87, 190.7125pt x 84.315pt>
+File: logohori.pdf Graphic file (type pdf)
+
+<use logohori.pdf>
+Package pdftex.def Info: logohori.pdf used on input line 73.
+(pdftex.def)             Requested size: 96.53748pt x 42.67912pt.
+ [2 <C:/Program Files/MiKTeX 2.9/tex/latex/polytechnique/logohori.pdf> <C:/Prog
+ram Files/MiKTeX 2.9/tex/latex/polytechnique/filetlongrouge.pdf> <C:/Program Fi
+les/MiKTeX 2.9/tex/latex/polytechnique/filetcourtbleuclair.pdf>]
+File: filetcourtbleuclair.pdf Graphic file (type pdf)
+ <use filetcourtbleuclair.pdf>
+Package pdftex.def Info: filetcourtbleuclair.pdf used on input line 91.
+(pdftex.def)             Requested size: 28.40483pt x 2.16676pt.
+File: logohori.pdf Graphic file (type pdf)
+ <use logohori.pdf>
+Package pdftex.def Info: logohori.pdf used on input line 94.
+(pdftex.def)             Requested size: 96.53748pt x 42.67912pt.
+ [3 <C:/Users/Eloi/Documents/GitHub/Titanic/rapport/sexsur.png> <C:/Users/Eloi/
+Documents/GitHub/Titanic/rapport/agesur.png> <C:/Users/Eloi/Documents/GitHub/Ti
+tanic/rapport/titlesur.png>]
+File: filetcourtbleuclair.pdf Graphic file (type pdf)
+ <use filetcourtbleuclair.pdf>
+Package pdftex.def Info: filetcourtbleuclair.pdf used on input line 95.
+(pdftex.def)             Requested size: 28.40483pt x 2.16676pt.
+pdfTeX warning (ext4): destination with the same identifier (name{section.1}) h
+as been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.101 ...king the "best" classification algorithm}
+                                                  
+File: filetlongrouge.pdf Graphic file (type pdf)
+ <use filetlongrouge.pdf>
+Package pdftex.def Info: filetlongrouge.pdf used on input line 101.
+(pdftex.def)             Requested size: 124.21074pt x 2.16628pt.
+File: filetcourtbleuclair.pdf Graphic file (type pdf)
+
+<use filetcourtbleuclair.pdf>
+Package pdftex.def Info: filetcourtbleuclair.pdf used on input line 103.
+(pdftex.def)             Requested size: 28.40483pt x 2.16676pt.
+File: filetcourtbleuclair.pdf Graphic file (type pdf)
+ <use filetcourtbleuclair.pdf>
+Package pdftex.def Info: filetcourtbleuclair.pdf used on input line 108.
+(pdftex.def)             Requested size: 28.40483pt x 2.16676pt.
+File: filetcourtbleuclair.pdf Graphic file (type pdf)
+
+<use filetcourtbleuclair.pdf>
+Package pdftex.def Info: filetcourtbleuclair.pdf used on input line 111.
+(pdftex.def)             Requested size: 28.40483pt x 2.16676pt.
+File: logohori.pdf Graphic file (type pdf)
+ <use logohori.pdf>
+Package pdftex.def Info: logohori.pdf used on input line 115.
+(pdftex.def)             Requested size: 96.53748pt x 42.67912pt.
+ [4]pdfTeX warning (ext4): destination with the same identifier (name{section.1
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.61 ...Seeking the best classification algorithm}
-                                                  
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 84.
- [3pdfTeX warning (ext4): destination with the same identifier (name{section.1}
-) has been already used, duplicate ignored
+l.122 \section{What has not worked}
+                                   
+File: filetlongrouge.pdf Graphic file (type pdf)
+ <use filetlongrouge.pdf>
+Package pdftex.def Info: filetlongrouge.pdf used on input line 122.
+(pdftex.def)             Requested size: 124.21074pt x 2.16628pt.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 123.
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.84 \end{document}
-                   ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 84.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omslmr.fd"
+File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 123.
+pdfTeX warning (ext4): destination with the same identifier (name{section.2}) h
+as been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.136 ... tried and could maybe improve our score}
+                                                  
+File: filetlongrouge.pdf Graphic file (type pdf)
+ <use filetlongrouge.pdf>
+Package pdftex.def Info: filetlongrouge.pdf used on input line 136.
+(pdftex.def)             Requested size: 124.21074pt x 2.16628pt.
+File: logohori.pdf Graphic file (type pdf)
+
+<use logohori.pdf>
+Package pdftex.def Info: logohori.pdf used on input line 147.
+(pdftex.def)             Requested size: 96.53748pt x 42.67912pt.
+ [5]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 149.
+File: logohori.pdf Graphic file (type pdf)
+ <use logohori.pdf>
+Package pdftex.def Info: logohori.pdf used on input line 149.
+(pdftex.def)             Requested size: 96.53748pt x 42.67912pt.
+ [6]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 149.
 
 (C:\Users\Eloi\Documents\GitHub\Titanic\rapport\Rapport_titanic.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 84.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 84.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 149.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 149.
 Package rerunfilecheck Info: File `Rapport_titanic.out' has not changed.
-(rerunfilecheck)             Checksum: 80F77FB6D275B1C91FD9E2F6E558FB5B;459.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 84.
+(rerunfilecheck)             Checksum: C5BE070C5A816FA58D2434AB4F2D8397;984.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 149.
  ) 
 Here is how much of TeX's memory you used:
- 6834 strings out of 493921
- 96652 string characters out of 3147285
- 180261 words of memory out of 3000000
- 10016 multiletter control sequences out of 15000+200000
- 21433 words of font info for 60 fonts, out of 3000000 for 9000
+ 8071 strings out of 493921
+ 115292 string characters out of 3147285
+ 207980 words of memory out of 3000000
+ 11181 multiletter control sequences out of 15000+200000
+ 77996 words of font info for 60 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 29i,6n,28p,453b,371s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Eloi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\e
-ctt0900.pk> <C:\Users\Eloi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec
-\dpi600\ecrm0900.pk> <C:\Users\Eloi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jk
-nappen\ec\dpi600\ecbx1095.pk> <C:\Users\Eloi\AppData\Local\MiKTeX\2.9\fonts\pk\
-ljfour\jknappen\ec\dpi600\ecbi2074.pk> <C:\Users\Eloi\AppData\Local\MiKTeX\2.9\
-fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\Eloi\AppData\Local\Mi
-KTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk> <C:\Users\Eloi\AppData
-\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1095.pk> <C:\Users\Elo
-i\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2074.pk> <C:\
-Users\Eloi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1095
-.pk> <C:\Users\Eloi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600
-\ecrm1200.pk> <C:\Users\Eloi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\
-ec\dpi600\ecrm1728.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmsy10.pfb>
-Output written on Rapport_titanic.pdf (3 pages, 100421 bytes).
+ 29i,9n,33p,946b,378s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Program Fil
+es/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}<C:/Program Files/MiKTeX 2.9/fonts/t
+ype1/public/lm/lmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lm
+bx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbxi10.pfb><C:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/public/lm/lmcsc10.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
+public/lm/lmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr9.pfb>
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Program Files
+/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/lm/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/l
+m/lmtt9.pfb>
+Output written on Rapport_titanic.pdf (6 pages, 940540 bytes).
 PDF statistics:
- 333 PDF objects out of 1000 (max. 8388607)
- 18 named destinations out of 1000 (max. 500000)
- 57 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 215 PDF objects out of 1000 (max. 8388607)
+ 26 named destinations out of 1000 (max. 500000)
+ 148 words of extra memory for PDF output out of 10000 (max. 10000000)
 

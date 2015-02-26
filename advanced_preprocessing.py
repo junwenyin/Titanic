@@ -56,6 +56,7 @@ data['Title']=data['Name'].map(lambda x: substrings_in_string_title(x, title_lis
 
 #Replace missing ages with the average age of people with the same title
 average_age = data.groupby("Title").aggregate(np.mean)["Age"]
+print average_age
 data["Age"] = data.apply(lambda row: average_age[row["Title"]]
                                             if pd.isnull(row["Age"])
                                             else row["Age"],

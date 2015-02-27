@@ -10,7 +10,7 @@
 \usepackage{amsthm}
 \usepackage{graphicx}
 \usepackage{hyperref}
-\usepackage[fancysections]{polytechnique}
+\usepackage{polytechnique}
 
 
 \author{Nicolas Drizard, Eloi Zablocki}
@@ -26,37 +26,39 @@
 \newpage
 \part*{Introduction}
 In the report we present our approach to the \textit{Kaggle} competition\footnote{More infos to be found at \url{https://www.kaggle.com/c/titanic-gettingStarted/}}. The goal is to predict the passengers that survived at the shipwreck of Titanic, given some caracteristics such as the genre, the age, etc.\\
-First, we will explain the preprocessing task that has be made in order to clean, extract and create features. Then we will present how we handled the classification task, the algorithms used or tried.
+First, we will explain the preprocessing task that has been made in order to clean, extract and create features. Then we will go through the classification task, with the algorithms used and tried.
 
 \part{\textit{Data pre-processing} and \textit{Feature Engineering}}
 \setcounter{section}{0}
 
 
 \section{Data pre-processing}
-As given with the assignment, the data of \textit{train.csv} and \textit{test.csv} was raw and there was some work to be done in order to clean the data. For example, there are missing values in the dataset, some features are no usefull such as the passengerId, some features are string with very usefull information such as the passenger name (containing the title and the family name).
+As given with the assignment, the data of \textit{train.csv} and \textit{test.csv} were composed of raws and there was some work to be done in order to clean the data. For example, there are missing values in the dataset, some features are not useful such as the passengerId, some features are string with very useful information such as the passenger name (containing the title and the family name).
 
 \paragraph{Use of pandas}
-To easly clean up the data set and create new features, we have used the python library \textit{pandas}. This library allowed to visualize the data and to make some initial data exploration.
+To easily clean up the data set and create new features, we have used the python library \textit{pandas}. This library allowed to visualize and explore data.
 
 \paragraph{Data visualization}
-One of the first tasks we made was data visualization. Indeed, in order to have some insights on the general pipeline, it is very convenient to vizualize the data. For example, our first observation was the part of women who have survived compared to the part of the men who have survived. Here you can find some visualizations (Figure~\ref{sexsur}, Figure~\ref{agesur}, Figure~\ref{titlesur}) made on Weka (the software we used that we will explain later in this report). In the color blue represent the people who died and the red color is for survivals.
-\begin{figure}
+One of the first tasks we made was data visualization. Indeed, in order to have some insights on the general pipeline, it is very convenient to visualize the data. For example, our first observation was the part of women who have survived compared to the part of the men who have survived. Here you can find some visualizations (Figure~\ref{sexsur}, Figure~\ref{agesur}, Figure~\ref{titlesur}) made on Weka (the software used will be presented later in this report). The color blue represents the people who died and the red color the survivors.
 
-	\includegraphics[scale=0.6]{sexsur.png}
-	\includegraphics[scale=0.6]{agesur.png}
-	\includegraphics[scale=0.6]{titlesur.png}
-	
-From the left to the right :\\
-	\caption{Dead and survival people repartition functions of the sex. Left : Male, Right : Female}
-	\label{sexsur}
-	\caption{Dead and survival people repartition functions of the age}
-	\label{agesur}
-	\caption{Dead and survival people repartition functions of the title.
+\begin{figure}[!ht]
+	\centering
+	\begin{minipage}[t]{5cm}
+		\includegraphics[scale=0.6]{sexsur.png}
+		\caption{Dead and surviving people repartition functions of the sex. Left : Male, Right : Female}
+		\label{sexsur}
+	\end{minipage}
+	\begin{minipage}[t]{5cm}
+		\includegraphics[scale=0.6]{agesur.png}
+		\caption{Dead and surviving people repartition functions of the age}
+		\label{agesur}
+	\end{minipage}
+	\begin{minipage}[t]{5cm}
+		\includegraphics[scale=0.6]{titlesur.png}
+		\caption{Dead and surviving people repartition functions of the title.
 	From the left to the right : Mr, Mrs, Miss, Master}
-	\label{titlesur}
-
-
-	
+		\label{titlesur}
+	\end{minipage}	
 \end{figure}
 
 
@@ -66,14 +68,14 @@ From the left to the right :\\
 \subsection{Creation of features}
 
 \paragraph{Feature extraction}
-Some raw features such as the name and the cabin number contain precious information such as the title or the deck number. Nevertheless most of the algorithms would have troubles to use those features since they are strings. Thus, a "hand-made" extraction of the features have to made.
+Some features such as the name and the cabin number contain precious information such as the title or the deck number. Nevertheless most of the algorithms would have troubles to use those features since they are strings. Thus, a "hand-made" extraction of the features have to be made.
 
 \subparagraph{Title extraction}
-The title can give usefull information on the person. A Lord, a Master (children), and a Miss have all three different chances to survive. With some appropriate function of \textit{pandas} we have extracted the title from the name of the person. This gives us about 15 titles in the training set. We have aggregated the titles into four representative categories so that our algorithm is less likely to overfit the data. The categories are Mr., Miss., Mrs. and Master. To sum up, we have created a four categories feature "Title" and removed the feature "Name"
+The title can give useful information on a person. A Lord, a Master (children), and a Miss have all three different chances to survive. With some appropriate function of \textit{pandas} we have extracted the title from the name of the person. This gives us about 15 titles in the training set. We have aggregated the titles into four representative categories so that our algorithm is less likely to overfit the data. The categories are Mr., Miss., Mrs. and Master. To sum up, we have created a four-categories feature "Title" and removed the feature "Name"
 
 
 \subparagraph{Deck extraction}
-Eventhough there are many missing values for the cabin number, the one the one that are present gives us an information on which deck the person was. For example "C123" means that the cabin was on the deck "C". Again we have created a categorical feature "Deck" (values A, B, C, D, E, F, T, G or missing value) and removed the feature "Cabin".
+Even though there are many missing values for the cabin number, those present give an information on which deck the person was. For example "C123" means that the cabin was on the deck "C". Again we have created a categorical feature "Deck" (values A, B, C, D, E, F, T, G or missing value) and removed the feature "Cabin".
 
 \paragraph{New features}
 Because we can always add or multiply two numbers to create a new number, here are the features that we have added to our dataset. Those features depends and are somehow redondant with other features.
@@ -82,46 +84,37 @@ Because we can always add or multiply two numbers to create a new number, here a
 We have created a "Family size" feature. This is simply equal to the sum of "Sibsp" (number or siblings and spouse) and "Parch" (number of parents and children) and it represents the size of the family.
 
 \subparagraph{Fare per person}
-We have created a "Fare per person" feature that is equal to the quotient of the "Fare" by the "Family size". The goal of this feature is to emphasize the difference between a lonely rich person and a poor person in a large family.
+We have created a "Fare per person" feature that is equal to the quotient of the "Fare" by the "Family size". The goal of this feature is to emphasize the difference between a single rich person and a poor person in a large family.
 
 \subparagraph{Age class interaction}
-We have created a "Age*class" feature. This feature is simply the product of the age of the person with his class. The goal of this feature complementary to the "Fare per person" feature: it emphasizes the difference between an old rich man and a young poor person.
+We have created a "Age*class" feature. This feature is simply the product of the age of the person with his class. The goal of this feature is complementary to the "Fare per person" feature: it emphasizes the difference between an old rich man and a young poor person.
 
 
 \subsection{Filling missing values}
-Most of the algorithm implemented in Weka accept missing values. Thus we have only filled the missing values that really are important. Given that the age of the passenger is very important and that we do not want weka to replace the age of children with the average age of all the passengers, we have computed an approached age which is the mean of the age of people who have the same title. For example the average age of the Master children is 4.57 whereas the average age of Reverant people is 43.17.\\
-This modification was extremely helpfull to improve our score.
+Most of the algorithm implemented in Weka accept missing values. Thus we have only filled the missing values that are really important. Given that the age of the passenger is very important and that we do not want weka to replace the age of children with the average age of all the passengers, we have computed an approached age which is the mean of the age of people who have the same title. For example the average age of the Master children is 4.57 whereas the average age of Reverend people is 43.17.\\
+This modification was extremely helpful to improve our score.
 
-\subsection{Dimensionality reduction}
-(on en a pas fait, donc a voir si on en fait ou pas)
 
 \part{Classification algorithms}
 \setcounter{section}{0}
 
-\section{Seeking the "best" classification algorithm}
-
-\subsection{Weka}
-Weka is a library developped by the Waikato University\footnote{mettre le lien} in the Java programming language. Weka is a powerfull tool for data analysis such as classification, regression, data vizualization or dimensionality reduction. In each of these machine learning fields, it has many implemented algorithms (50+ classification algorithms for example). Weka's input are \textbf{.arff} files which are very close to \textbf{.csv} files but with more information on the features.\\
+\section{Weka}
+We chose to use an already built library to classify our cleaned data. Weka is a library developed by the Machine Learning group form the Waikato University\footnote{More infos to be found at \url{http://www.cs.waikato.ac.nz/ml/}} in the Java programming language. Weka is a powerful tool for data analysis such as classification, regression, data vizualization or dimensionality reduction. In each of these machine learning fields, it has many implemented algorithms (50+ classification algorithms for example). Weka's input are \textbf{.arff} files which are very close to \textbf{.csv} files but with more information on the features.\\
 The whole library accepts missing values and different kind of features (categorical, numerical, date...) yet some implemented algorithms may be more restrictive concerning the data type (some do not treat categorical features for example).\\
 The preprocessing tasks explained in the part 1, gave us \textbf{.csv} files that we converted into \textbf{.arff} files, by hand. When Weka makes predictions on the test set, it returns an \textbf{.arff} file that we convert into \textbf{.csv} files, the accepted format for the \textit{Kaggle} submissions.
 
-\subsection{finding a good algo}
-test de pleins d'algo, on a choisis "bagging"
+\section{Considered algorithms}
+The advantage of using the library Weka is that we can test our data set with many different algorithms. We first tried it with the basic algorithms such as oneR which is considering only the most weighted feature. We had a result of 78 \% in the cross validation test. Then we considered different algorithms seen in the coursework such as AdaBoost and random Forest. But the best result were made with the Bagging algorithm which is presented in the next paragraph.
 
-\subsection{Explication de bagging}
-ce qu'il fait en general, son implementation\\
-il accepte les missing values, comment les traite-t-il\\
-il accepte les attributs a valeurs nominales, comment les traite-t-il
+\section{Chosen algorithm : Bagging}
+As Boosting, Bagging (standing for Bootstrap Aggregating) is an ensemble method. It creates separate samples of the training dataset and creates a classifier for each sample. The results of these multiple classifiers are then combined (such as averaged or majority voting). The trick is that each sample of the training dataset is different, giving each classifier that is trained, a subtly different focus and perspective on the problem. Averaging on the different basis enables to decrease the variance, which is important for our data set which is prone to over-fitting with its several features.
 
 
-
-
-\part{What is not in this report}
+\part{Perspective}
 \setcounter{section}{0}
 
-\section{What has not worked}
-ne pas hesiter a dire qu'on a essayer plein de trucs qui n'ont pas forcément fonctionne. bien expliquer que trouver une bonne solution consister a approcher pas tatonnement. regarde sur internet pour avoir des idees.
-https://triangleinequality.wordpress.com/2013/09/08/basic-feature-engineering-with-the-titanic-data/
+\section{Difficulties}
+The most important lesson of this project is that building an acceptable classifier needs to process step by step. The first classification we tried was with only five features and had only result around 70 \% in the cross validation test. Then we need to think about which feature was relevant to consider and how to format it. Some of our initial guesses were irrelevant and made us waste time, as using the logarithm of fare (the logarithm is often used with financial variables).
 
 http://trevorstephens.com/post/73461351896/titanic-getting-started-with-r-part-4-feature
 
@@ -130,20 +123,19 @@ http://gertlowitz.blogspot.com.au/2013/06/where-am-i-up-to-with-titanic-competio
 http://www.joyofdata.de/blog/titanic-challenge-kaggle-svms-kernlab-decision-trees-party/
 \\
 si t'as la foi, teste SVM en implementation python c'est performant sur notre dataset je crois.\\
-et si t'arrives a ne pas centrer les trois legendes de nos images ce serait top !
 
 
-\section{What we have not tried and could maybe improve our score}
-nom de famille : si une personne d'une famille vit, alors peut etre que ses freres et soeurs vivront aussi plus probablement.
-clusteriser les gens (surtout les enfants) en famille (selon leur nom de famille) et faire une prediction pour tout le monde
+\section{Future}
+Using Weka enable us to test built-in Machine Learning algorithms and to focus on the feature engineering part but we can try to built our own Bagging algorithm to obtain better result. Or we could even test with another method, such as AdaBoost or neural networks.\\
+Nevertheless, the feature engineering part is not over. We drop the family name where as we could cluster the data with it as a person is more likely to have survived is one of its relative has survived, this become all the more true with children from the same family for instance. Maybe some other interaction between numerical values can provide relevant results as we haven't tried all of them.
 
 
-\part*{explication du code}
+\part*{Code Explanation}
 faut faire le dossier qu'on va rendre. avec les bons programmes et les bons fichiers. pourquoi pas rendre des programmes qui marchent moins bien en disant que c'etait nos premieres pistes de recherche, pour souligner la progression de notre taf (quitte a les creer a partir de ce qui marche bien);
 expliquer dans cette partie le contenu du dossier qu'on rend
 
 \part*{Conclusion}
-This project gives a good overview of the job of data engineers today. Our approach to deal with the subject is a common pipeline to handle many classification problems encountered in many companies or in the public research field. This project makes us realize that all classification problems are different, that there are no best algorithms in general since it relies a lot on the type, the number and the range of the data. Moreover, not only don't we have a best classification algorithm in general, but also there are no best feature engineering method in general. Indeed, one always has to keep in mind the nature of the data he is dealing with. For example, thinking that the first letter of the cabin number might be the deck and thus might be a classification criterion is something that cannot easily be done by a computer whereas human can make the feature engineering task given a specific context of the data.
+This project gives a good overview of the job of data engineers today. Our approach to deal with the subject is a common pipeline to handle many classification problems encountered in many companies or in the public research field. This project made us realize that all classification problems are different, that there are no best algorithms in general since it relies a lot on the type, the number and the range of the data. Moreover, not only don't we have a best classification algorithm in general, but also there are no best feature engineering method in general. Indeed, one always has to keep in mind the nature of the data he is dealing with. For example, thinking that the first letter of the cabin number might be the deck and thus might be a classification criterion is something that cannot easily be done by a computer whereas human can make the feature engineering task given a specific context of the data.
 
 
 \end{document}

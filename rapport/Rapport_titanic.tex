@@ -26,7 +26,7 @@
 
 \newpage
 \part*{Introduction}
-In the report we present our approach to the \textit{Kaggle} competition\footnote{More info to be found at \url{https://www.kaggle.com/c/titanic-gettingStarted/}}. The goal is to predict the passengers that survived at the shipwreck of Titanic, given some caracteristics such as the genre, the age, etc.\\
+In the report we present our approach to the \textit{Kaggle} competition\footnote{More info to be found at \url{https://www.kaggle.com/c/titanic-gettingStarted/}}. The goal is to predict the passengers who survived at the shipwreck of Titanic, given some characteristics such as the genre, the age, etc.\\
 First, we will explain the preprocessing task that has been made in order to clean, extract and create features. Then we will go through the classification task, with the algorithms used and tried.
 
 \part{\textit{Data pre-processing} and \textit{Feature Engineering}}
@@ -100,18 +100,18 @@ This modification was extremely helpful to improve our score.
 \setcounter{section}{0}
 
 \section{Weka}
-We chose to use an already built library to classify our cleaned data. Weka is a library developed by the Machine Learning group form the Waikato University\footnote{More info to be found at \url{http://www.cs.waikato.ac.nz/ml/}} in the Java programming language. Weka is a powerful tool for data analysis such as classification, regression, data vizualization or dimensionality reduction. In each of these machine learning fields, it has many implemented algorithms (50+ classification algorithms for example). Weka's input are \textbf{.arff} files which are very close to \textbf{.csv} files but with more information on the features.\\
+We chose to use an already built library to classify our cleaned data. Weka is a library developed by the Machine Learning group form the Waikato University\footnote{More info to be found at \url{http://www.cs.waikato.ac.nz/ml/}} in the Java programming language. Weka is a powerful tool for data analysis such as classification, regression, data visualization or dimensionality reduction. In each of these machine learning fields, it has many implemented algorithms (50+ classification algorithms for example). Weka's inputs are \textbf{.arff} files which are very close to \textbf{.csv} files but with more information on the features.\\
 The whole library accepts missing values and different kind of features (categorical, numerical, date...) yet some implemented algorithms may be more restrictive concerning the data type (some do not treat categorical features for example).\\
 The preprocessing tasks explained in the part 1, gave us \textbf{.csv} files that we converted into \textbf{.arff} files, by hand. When Weka makes predictions on the test set, it returns an \textbf{.arff} file that we convert into \textbf{.csv} files, the accepted format for the \textit{Kaggle} submissions.
 
 \section{Classification algorithm : REPTree}
 The advantage of using the library Weka is that we can test our data set with many different algorithms. We have tried many algorithms such as Random Forest, AdaBoost, DecisionTable and so on. First note that the basic algorithm oneR that only takes into account the most important feature (sex) has a score of 0.765 on Kaggle.  An algorithm that does very well on our data and the features we have created is REPTree.\\
-REPTree algorithm is a fast decision tree learner. It builds a decision tree using information gain and prunes it using reduced-erro pruning (with backfitting). In this algorithm, missing values are dealt with by splitting the corresponding instances into pieces. You can find the paper that describes the algorithm at \url{http://ictactjournals.in/paper/IJSC(Jan2013)_Vol3_Iss2_P7_498to505.pdf}.\\
+REPTree algorithm is a fast decision tree learner. It builds a decision tree using information gain and prunes it using reduced-error pruning (with backfitting). In this algorithm, missing values are dealt with by splitting the corresponding instances into pieces. You can find the paper that describes the algorithm at \url{http://ictactjournals.in/paper/IJSC(Jan2013)_Vol3_Iss2_P7_498to505.pdf}.\\
 With this algorithm applied to the engineered data we scored about 0.785 on \textit{Kaggle}. Our parameters for the model are the following:
 \begin{itemize}
 	\item Maximum tree depth : None
 	\item Minimum total weight of the instances in a leaf : 2
-	\item Linimum proportion of the variance on all the data that needs to be present at a node in order for splitting to be performed in regression trees : 0.001
+	\item Minimum proportion of the variance on all the data that needs to be present at a node in order for splitting to be performed in regression trees : 0.001
 	\item No performed prunning
 \end{itemize}
 
@@ -133,7 +133,7 @@ Our firsts submissions on Kaggle gave us average results (around $0.77$). Little
 
 \section{Possible future for the project}
 \paragraph{Classification method}
-Using Weka enabled us to test built-in Machine Learning algorithms and to focus on the feature engineering part. One possible improvement we can make is to build our own implementation of the algorithm we used and of the bagging part. Indeed, we could then have a tailor-suited algorithm that perfoms a bit better in our case.\\ Some possible improvements can be made with neural networks. Nowadays, Deep Learning is what gives the best results in classification competitions (on the ImageNet Dataset for example). However, building efficient deep neural networks is complicated and time-costly and we have decided to focus on more traditional algorithms that are enventually performing well.
+Using Weka enabled us to test built-in Machine Learning algorithms and to focus on the feature engineering part. One possible improvement we can make is to build our own implementation of the algorithm used and of the bagging part. Indeed, we could then have a tailor-suited algorithm that perfoms a bit better in our case.\\ Some possible improvements can be made with neural networks. Nowadays, Deep Learning is what gives the best results in classification competitions (on the ImageNet Dataset for example). However, building efficient deep neural networks is complicated and time-costly and we have decided to focus on more traditional algorithms that are enventually performing well.
 
 \paragraph{Feature engineering}
 The feature engineering part is never over. One can always think of a new feature that represents some feature interactions. We have added three new features (fare per person, family size and  age*class) that represent in some way the interaction between the wealth of the people, their age and their family. Nevertheless, some other interaction between numerical values can likely provide relevant results.\\

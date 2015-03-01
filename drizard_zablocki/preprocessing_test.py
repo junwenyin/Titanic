@@ -83,4 +83,4 @@ data['FarePerPerson']=data['Fare']/(data['Familysize']+1)
 #change missing values to "?"
 data = data.fillna("?")
 
-data.to_csv("test_cleaned.csv",index=False)
+data.to_csv("test_preprocessed.csv",index=False)

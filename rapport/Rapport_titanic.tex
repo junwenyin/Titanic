@@ -1,8 +1,9 @@
 \documentclass[11pt,a4paper,portrait]{article}
 
-\usepackage[francais]{babel}
-\usepackage[latin1]{inputenc}
+\usepackage{polytechnique}
+\usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage[english]{babel}
 
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -13,7 +14,7 @@
 \usepackage{polytechnique}
 
 
-\author{Nicolas Drizard, Eloi Zablocki}
+\author{Nicolas Drizard, Eloi Zablocki, INF582$\_$42}
 \date{March, 1st 2015}
 \title{Predicting Survival on the Titanic Wreck}
 
@@ -68,7 +69,7 @@ One of the first tasks we made was data visualization. Indeed, in order to have 
 \subsection{Creation of features}
 
 \paragraph{Feature extraction}
-Some features such as the name and the cabin number contain precious information such as the title or the deck number. Nevertheless most of the algorithms would have troubles to use those features since they are strings. Thus, a "hand-made" extraction of the features have to be made.
+Some features such as the name and the cabin number contain precious information such as the title or the deck number. Nevertheless most of the algorithms would have troubles to use those features since they are strings. Thus, a "hand-made" extraction of the features has to be done.
 
 \subparagraph{Title extraction}
 The title can give useful information on a person. A Lord, a Master (children), and a Miss have all three different chances to survive. With some appropriate function of \textit{pandas} we have extracted the title from the name of the person. This gives us about 15 titles in the training set. We have aggregated the titles into four representative categories so that our algorithm is less likely to overfit the data. The categories are Mr., Miss., Mrs. and Master. To sum up, we have created a four-categories feature "Title" and removed the feature "Name"
@@ -95,7 +96,7 @@ Most of the algorithm implemented in Weka accept missing values. Thus we have on
 This modification was extremely helpful to improve our score.
 
 
-\part{Classification algorithms}
+\part{Classification}
 \setcounter{section}{0}
 
 \section{Weka}
@@ -103,21 +104,34 @@ We chose to use an already built library to classify our cleaned data. Weka is a
 The whole library accepts missing values and different kind of features (categorical, numerical, date...) yet some implemented algorithms may be more restrictive concerning the data type (some do not treat categorical features for example).\\
 The preprocessing tasks explained in the part 1, gave us \textbf{.csv} files that we converted into \textbf{.arff} files, by hand. When Weka makes predictions on the test set, it returns an \textbf{.arff} file that we convert into \textbf{.csv} files, the accepted format for the \textit{Kaggle} submissions.
 
-\section{Considered algorithms}
-The advantage of using the library Weka is that we can test our data set with many different algorithms. We first tried it with the basic algorithms such as oneR which is considering only the most weighted feature. We had a result of 78 \% in the cross validation test. Then we considered different algorithms seen in the coursework such as AdaBoost and random Forest. But the best result were made with the Bagging algorithm which is presented in the next paragraph.
+\section{Classification algorithm : REPTree}
+The advantage of using the library Weka is that we can test our data set with many different algorithms. We have tried many algorithms such as Random Forest, AdaBoost, DecisionTable and so on. First note that the basic algorithm oneR that only takes into account the most important feature (sex) has a score of 0.765 on Kaggle.  An algorithm that does very well on our data and the features we have created is REPTree.\\
+REPTree algorithm is a fast decision tree learner. It builds a decision tree using information gain and prunes it using reduced-erro pruning (with backfitting). In this algorithm, missing values are dealt with by splitting the corresponding instances into pieces. You can find the paper that describes the algorithm at \url{http://ictactjournals.in/paper/IJSC(Jan2013)_Vol3_Iss2_P7_498to505.pdf}.\\
+With this algorithm applied to the engineered data we scored about 0.785 on \textit{Kaggle}. Our parameters for the model are the following:
+\begin{itemize}
+	\item Maximum tree depth : None
+	\item Minimum total weight of the instances in a leaf : 2
+	\item Linimum proportion of the variance on all the data that needs to be present at a node in order for splitting to be performed in regression trees : 0.001
+	\item No performed prunning
+\end{itemize}
 
-\section{Chosen algorithm : Bagging}
-As Boosting, Bagging (standing for Bootstrap Aggregating) is an ensemble method. It creates separate samples of the training dataset and creates a classifier for each sample. The results of these multiple classifiers are then combined (such as averaged or majority voting). The trick is that each sample of the training dataset is different, giving each classifier that is trained, a subtly different focus and perspective on the problem. Averaging on the different basis enables to decrease the variance, which is important for our data set which is prone to over-fitting with its several features.
+\section{Improving our model : Bagging}
+The score of 0.785 is good but improvable and so we were thinking that we could even do better. We felt like one step was missing in the pipeline. Similarly to random forest that works with many independant random trees, we wanted something that could gather the vote of many REPTrees, since REPTree is a randomized algorithm. What we have used for that is the \textit{Bagging} method\\
+As Boosting, Bagging (standing for Bootstrap Aggregating) is an ensemble method. It creates separate samples of the training dataset and creates a classifier for each sample. The results of these multiple classifiers are then combined (such as averaged or majority voting). The trick is that each sample of the training dataset is different, giving each classifier that is trained, a subtly different focus and perspective on the problem. Averaging on the different basis enables to decrease the variance, which is important for our data set which is prone to over-fitting with its several features.\\
+With the bagging method applied to our REPTree algorithm, we now score 0.795 on the \textit{Kaggle} platform. Our parameters for the model are the following:
+\begin{itemize}
+	\item Size of each bag, as a percentage of the training set size : 100. 
+	\item Number of iterations : 10
+\end{itemize} 
 
-
-\part{Perspective}
+\part{Perspectives}
 \setcounter{section}{0}
 
 \section{Difficulties}
 The most important lesson we take from this project is that building an acceptable classifier is a subtile task. Indeed, we have to consider the pipeline as a whole and not to have a step-by-step approach. For example the choice of the features has an impact on the choice of the algorithm and vice versa. Thus, once we have been through the pipeline a first time we have to adjust each step simultaniously, regarding the others.\\
 Our firsts submissions on Kaggle gave us average results (around $0.77$). Little by little, we added more and more features but we also had to remove some features that turned out to be irrelevant. For example, we had considered the logarithm of the fare, as it is often used in financial calculation.
 
-\section{Future}
+\section{Possible future for the project}
 \paragraph{Classification method}
 Using Weka enabled us to test built-in Machine Learning algorithms and to focus on the feature engineering part. One possible improvement we can make is to build our own implementation of the algorithm we used and of the bagging part. Indeed, we could then have a tailor-suited algorithm that perfoms a bit better in our case.\\ Some possible improvements can be made with neural networks. Nowadays, Deep Learning is what gives the best results in classification competitions (on the ImageNet Dataset for example). However, building efficient deep neural networks is complicated and time-costly and we have decided to focus on more traditional algorithms that are enventually performing well.
 
@@ -126,8 +140,7 @@ The feature engineering part is never over. One can always think of a new featur
 We have dropped people's family name even though we could cluster the data with it. Indeed a person is more likely to survive if one of its relatives survives. This becomes more true with children from the same family. For instance, if "A. Smith", aged 8 survives, "B. Smith", aged 10 is very likely to survive too, since those two children are siblings with a high probability. Hence, we understand the importance of the family name, although we dropped it. With more time to spend on this project, we would have tried to cluster people according to their family name, in other words, to group them into families.
 
 \part*{Code Explanation}
-faut faire le dossier qu'on va rendre. avec les bons programmes et les bons fichiers. pourquoi pas rendre des programmes qui marchent moins bien en disant que c'etait nos premieres pistes de recherche, pour souligner la progression de notre taf (quitte a les creer a partir de ce qui marche bien);
-expliquer dans cette partie le contenu du dossier qu'on rend
+Please find with this report the folder with our code and files. To understand our pipeline and code, one can follow the precise steps described in the \textbf{README.txt} file.
 
 \part*{Conclusion}
 This project gives a good overview of the job of data engineers today. Our approach to deal with the subject is a common pipeline to handle many classification problems encountered in many companies or in the public research field. This project made us realize that all classification problems are different, that there are no best algorithms in general since it relies a lot on the type, the number and the range of the data. Moreover, not only don't we have a best classification algorithm in general, but also there are no best feature engineering method in general. Indeed, one always has to keep in mind the nature of the data he is dealing with. For example, thinking that the first letter of the cabin number might be the deck and thus might be a classification criterion is something that cannot easily be done by a computer whereas human can make the feature engineering task given a specific context of the data.

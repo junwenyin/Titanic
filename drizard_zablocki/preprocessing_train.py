@@ -81,4 +81,4 @@ data['FarePerPerson']=data['Fare']/(data['Familysize']+1)
 #There are two missing values for "Embarked"
 data = data.fillna("?")
 
-data.to_csv("train_cleaned.csv",index=False)
+data.to_csv("train_preprocessed.csv",index=False)

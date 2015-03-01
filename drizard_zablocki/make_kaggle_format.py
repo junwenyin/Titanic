@@ -7,8 +7,8 @@ Created on Wed Feb 11 15:14:33 2015
 
 import re
 
-arff = open("pandasdeck.arff",'r')
-csv = open("pandasdeck.csv",'w')
+arff = open("bagging_model.arff",'r')
+csv = open("predicted_class.csv",'w')
 
 csv.write("PassengerId,Survived\n")
 i = 892

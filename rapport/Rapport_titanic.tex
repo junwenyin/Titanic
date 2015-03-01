@@ -25,7 +25,7 @@
 
 \newpage
 \part*{Introduction}
-In the report we present our approach to the \textit{Kaggle} competition\footnote{More infos to be found at \url{https://www.kaggle.com/c/titanic-gettingStarted/}}. The goal is to predict the passengers that survived at the shipwreck of Titanic, given some caracteristics such as the genre, the age, etc.\\
+In the report we present our approach to the \textit{Kaggle} competition\footnote{More info to be found at \url{https://www.kaggle.com/c/titanic-gettingStarted/}}. The goal is to predict the passengers that survived at the shipwreck of Titanic, given some caracteristics such as the genre, the age, etc.\\
 First, we will explain the preprocessing task that has been made in order to clean, extract and create features. Then we will go through the classification task, with the algorithms used and tried.
 
 \part{\textit{Data pre-processing} and \textit{Feature Engineering}}
@@ -43,17 +43,17 @@ One of the first tasks we made was data visualization. Indeed, in order to have 
 
 \begin{figure}[!ht]
 	\centering
-	\begin{minipage}[t]{5cm}
+	\begin{minipage}[t]{5.5cm}
 		\includegraphics[scale=0.6]{sexsur.png}
 		\caption{Dead and surviving people repartition functions of the sex. Left : Male, Right : Female}
 		\label{sexsur}
 	\end{minipage}
-	\begin{minipage}[t]{5cm}
+	\begin{minipage}[t]{5.5cm}
 		\includegraphics[scale=0.6]{agesur.png}
 		\caption{Dead and surviving people repartition functions of the age}
 		\label{agesur}
 	\end{minipage}
-	\begin{minipage}[t]{5cm}
+	\begin{minipage}[t]{5.5cm}
 		\includegraphics[scale=0.6]{titlesur.png}
 		\caption{Dead and surviving people repartition functions of the title.
 	From the left to the right : Mr, Mrs, Miss, Master}
@@ -99,7 +99,7 @@ This modification was extremely helpful to improve our score.
 \setcounter{section}{0}
 
 \section{Weka}
-We chose to use an already built library to classify our cleaned data. Weka is a library developed by the Machine Learning group form the Waikato University\footnote{More infos to be found at \url{http://www.cs.waikato.ac.nz/ml/}} in the Java programming language. Weka is a powerful tool for data analysis such as classification, regression, data vizualization or dimensionality reduction. In each of these machine learning fields, it has many implemented algorithms (50+ classification algorithms for example). Weka's input are \textbf{.arff} files which are very close to \textbf{.csv} files but with more information on the features.\\
+We chose to use an already built library to classify our cleaned data. Weka is a library developed by the Machine Learning group form the Waikato University\footnote{More info to be found at \url{http://www.cs.waikato.ac.nz/ml/}} in the Java programming language. Weka is a powerful tool for data analysis such as classification, regression, data vizualization or dimensionality reduction. In each of these machine learning fields, it has many implemented algorithms (50+ classification algorithms for example). Weka's input are \textbf{.arff} files which are very close to \textbf{.csv} files but with more information on the features.\\
 The whole library accepts missing values and different kind of features (categorical, numerical, date...) yet some implemented algorithms may be more restrictive concerning the data type (some do not treat categorical features for example).\\
 The preprocessing tasks explained in the part 1, gave us \textbf{.csv} files that we converted into \textbf{.arff} files, by hand. When Weka makes predictions on the test set, it returns an \textbf{.arff} file that we convert into \textbf{.csv} files, the accepted format for the \textit{Kaggle} submissions.
 
@@ -114,21 +114,16 @@ As Boosting, Bagging (standing for Bootstrap Aggregating) is an ensemble method.
 \setcounter{section}{0}
 
 \section{Difficulties}
-The most important lesson of this project is that building an acceptable classifier needs to process step by step. The first classification we tried was with only five features and had only result around 70 \% in the cross validation test. Then we need to think about which feature was relevant to consider and how to format it. Some of our initial guesses were irrelevant and made us waste time, as using the logarithm of fare (the logarithm is often used with financial variables).
-
-http://trevorstephens.com/post/73461351896/titanic-getting-started-with-r-part-4-feature
-
-http://gertlowitz.blogspot.com.au/2013/06/where-am-i-up-to-with-titanic-competion.html
-
-http://www.joyofdata.de/blog/titanic-challenge-kaggle-svms-kernlab-decision-trees-party/
-\\
-si t'as la foi, teste SVM en implementation python c'est performant sur notre dataset je crois.\\
-
+The most important lesson we take from this project is that building an acceptable classifier is a subtile task. Indeed, we have to consider the pipeline as a whole and not to have a step-by-step approach. For example the choice of the features has an impact on the choice of the algorithm and vice versa. Thus, once we have been through the pipeline a first time we have to adjust each step simultaniously, regarding the others.\\
+Our firsts submissions on Kaggle gave us average results (around $0.77$). Little by little, we added more and more features but we also had to remove some features that turned out to be irrelevant. For example, we had considered the logarithm of the fare, as it is often used in financial calculation.
 
 \section{Future}
-Using Weka enable us to test built-in Machine Learning algorithms and to focus on the feature engineering part but we can try to built our own Bagging algorithm to obtain better result. Or we could even test with another method, such as AdaBoost or neural networks.\\
-Nevertheless, the feature engineering part is not over. We drop the family name where as we could cluster the data with it as a person is more likely to have survived is one of its relative has survived, this become all the more true with children from the same family for instance. Maybe some other interaction between numerical values can provide relevant results as we haven't tried all of them.
+\paragraph{Classification method}
+Using Weka enabled us to test built-in Machine Learning algorithms and to focus on the feature engineering part. One possible improvement we can make is to build our own implementation of the algorithm we used and of the bagging part. Indeed, we could then have a tailor-suited algorithm that perfoms a bit better in our case.\\ Some possible improvements can be made with neural networks. Nowadays, Deep Learning is what gives the best results in classification competitions (on the ImageNet Dataset for example). However, building efficient deep neural networks is complicated and time-costly and we have decided to focus on more traditional algorithms that are enventually performing well.
 
+\paragraph{Feature engineering}
+The feature engineering part is never over. One can always think of a new feature that represents some feature interactions. We have added three new features (fare per person, family size and  age*class) that represent in some way the interaction between the wealth of the people, their age and their family. Nevertheless, some other interaction between numerical values can likely provide relevant results.\\
+We have dropped people's family name even though we could cluster the data with it. Indeed a person is more likely to survive if one of its relatives survives. This becomes more true with children from the same family. For instance, if "A. Smith", aged 8 survives, "B. Smith", aged 10 is very likely to survive too, since those two children are siblings with a high probability. Hence, we understand the importance of the family name, although we dropped it. With more time to spend on this project, we would have tried to cluster people according to their family name, in other words, to group them into families.
 
 \part*{Code Explanation}
 faut faire le dossier qu'on va rendre. avec les bons programmes et les bons fichiers. pourquoi pas rendre des programmes qui marchent moins bien en disant que c'etait nos premieres pistes de recherche, pour souligner la progression de notre taf (quitte a les creer a partir de ce qui marche bien);
